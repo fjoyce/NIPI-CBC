@@ -6,7 +6,7 @@ Adapted from [Sharleen W's Shiny app for Hamilton, Ontario](https://sharleenw.sh
 
 # data
 
-"HistoricalResultsByCount [NIPI-2015-2020].csv" is the raw csv download (taxonomic sort) from https://netapp.audubon.org/cbcobservation/historical/resultsbycount.aspx# for count code CRMO.
+"HistoricalResultsByCount [NIPI-2015-2020].csv" is the raw csv download (taxonomic sort) from https://netapp.audubon.org/cbcobservation/historical/resultsbycount.aspx# for count code NIPI.
 
 Start year: XX (2014) and End year: 120 (2019)
 
