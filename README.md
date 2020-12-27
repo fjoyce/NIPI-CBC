@@ -1,6 +1,6 @@
 # Paso del Istmo Biological Corridor, Rivas, Nicaragua Christmas Bird Count Shiny app
 
-[Shiny app](https://fhjoyce.shinyapps.io/CRMO-CBC) for XXXX Christmas Bird Count. 
+[Shiny app](https://fhjoyce.shinyapps.io/NIPI-CBC) for Paso del Istmo Biological Corridor Christmas Bird Count. 
 
 Adapted from [Sharleen W's Shiny app for Hamilton, Ontario](https://sharleenw.shinyapps.io/hamilton_cbc_shiny/), as described on [this blog]( https://sharleenw.rbind.io/2019/03/24/hamilton-cbc-part-3/)
 
