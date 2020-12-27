@@ -1,6 +1,6 @@
-# Monteverde, Costa Rica Christmas Bird Count Shiny app
+# XXXX, Nicaragua Christmas Bird Count Shiny app
 
-[Shiny app](https://fhjoyce.shinyapps.io/CRMO-CBC) for Monteverde Christmas Bird Count. 
+[Shiny app](https://fhjoyce.shinyapps.io/CRMO-CBC) for XXXX Christmas Bird Count. 
 
 Adapted from [Sharleen W's Shiny app for Hamilton, Ontario](https://sharleenw.shinyapps.io/hamilton_cbc_shiny/), as described on [this blog]( https://sharleenw.rbind.io/2019/03/24/hamilton-cbc-part-3/)
 
