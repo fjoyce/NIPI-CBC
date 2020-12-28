@@ -149,7 +149,8 @@ NIPI_cbc <- NIPI_cbc %>%
 #replace NAs with 0s
 NIPI_cbc <- NIPI_cbc %>%
   mutate(how_many_counted = replace_na(how_many_counted, 0),
-         how_many_counted_by_hour = as.double(how_many_counted) / total_hours)
+         how_many_counted_by_hour = as.double(how_many_counted) / total_hours,
+         year = as.integer(year + 1))
 ```
 
 ```{r}
