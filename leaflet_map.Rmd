@@ -1,0 +1,32 @@
+---
+title: "circle_leaflet"
+author: "Francis Joyce"
+date: "12/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(leaflet)
+```
+
+```{r}
+map <- leaflet() %>% 
+  addProviderTiles("Esri.WorldImagery") %>% 
+  #addMarkers(lat = 11.21, 
+             #lng = -85.73) %>%
+  addCircleMarkers(lng = -85.73,
+                    lat = 11.21, 
+                    popup = "centro del circulo",
+                   fillColor= "alpha", opacity = 1,
+             options = markerOptions(draggable = FALSE, title = "NIPI")) %>% 
+  setView(lat = 11.21,
+          lng = -85.73,
+          zoom = 10)
+
+map
+```
+
