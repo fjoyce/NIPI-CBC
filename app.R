@@ -20,7 +20,7 @@ min_max <- function(vector){
 }
 
 # read in cleaned CBC data
-NIPI <- read_csv("NIPI-CBC-2020-cleaned.csv")
+NIPI <- read_csv("NIPI-CBC-2021-cleaned.csv")
 
 ## redo with species
 species_list <- NIPI %>%
@@ -38,7 +38,7 @@ year_min_max <- min_max(years_list)
 
 
 #navbarPage is a shiny page layout with a nav bar on top. Title for overall app.
-ui <- navbarPage("Conteo Navideño de Aves- Paso del Istmo 2015-2020",
+ui <- navbarPage("Conteo Navideño de Aves- Paso del Istmo 2015-2021",
                  
                  tabPanel(
                      
