@@ -11,14 +11,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r}
-library(dplyr)
+library(tidyverse)
 library(janitor)
-library(readr)
-library(naniar)
 library(lubridate)
-library(stringr)
-library(purrr)
-library(tidyr)
+library(naniar)
 library(knitr)
 library(kableExtra)
 library(here)
@@ -26,19 +22,23 @@ library(here)
 
 Download data from here: https://netapp.audubon.org/cbcobservation/historical/resultsbycount.aspx#
 
-Use count code CRMO
+Use count code NIPI
 
-Start year = 95 (1994)
-can do this with code after imporringEnd year = 120 (2019)
+Start year = 115 (2014) (but since NIPI count is in Jan, 2014 winter is really 2015 calendar year)
+can do this with code after importingEnd year = 121 (2020)
 
 CSV, sort Taxonomic
+
+
+##MANUAL CLEANING
 
 Then, delete non-species count top rows.
 
 ALso delete the rows below for participants...
 
 ```{r}
-NIPI_cbc <- read_csv(here("data/NIPI-2015-2020_pre-cleaned.csv"))
+NIPI_cbc <- read_csv(here("data/NIPI-2015-2021_pre-cleaned.csv"))
+
 ```
 
 
@@ -69,6 +69,7 @@ NIPI_cbc <- NIPI_cbc %>%
 NIPI_cbc %>% 
   filter(row_number() == 1) %>% 
   pull(species)
+
 ```
 
 ```{r}
@@ -76,6 +77,7 @@ NIPI_cbc %>%
 NIPI_cbc <- NIPI_cbc %>%
   mutate(species_latin = str_extract(species, "(?<=\\[).+?(?=\\])"),
          species = word(species, start = 1, sep = fixed('\n[')))
+
 ```
 
 
@@ -163,6 +165,36 @@ NIPI_cbc %>%
 Move this file manually to the root directory
 
 ```{r}
-write_csv(NIPI_cbc, "NIPI-CBC-2020-cleaned.csv")
+write_csv(NIPI_cbc, "NIPI-CBC-2021-cleaned.csv")
 ```
+
+
+Clean up and add 2021 data
+```{r}
+## Didn't actually end up using/needing this chunk, because I just waited until 2021 data was incorporated into the historical database instead of "current year"
+
+NIPI_cbc_2021 <- read_csv(here("data/NIPI-CBC-2021.csv"))
+
+
+#make the columns & column order match the dataset for previous years
+NIPI_cbc_2021 <- NIPI_cbc_2021 %>% 
+  select(c(-Flags, -Editorial_Comments)) %>%
+  rename(species= Species, how_many_counted = Number, how_many_counted_by_hour = Number_Per_Party_Hrs) %>% 
+  mutate(year= 2021) %>% 
+  relocate(year) %>% 
+  mutate(total_hours= 67.10) %>% 
+  relocate(total_hours, .before = how_many_counted_by_hour)
+  
+#get the list of unique common + Latin names for species that have been recorded
+NIPI_species <- NIPI_cbc %>% 
+  select(c(species,species_latin)) %>% 
+  unique()
+
+NIPI_cbc_2021 <- left_join(NIPI_cbc_2021, NIPI_species)
+
+
+```
+
+
+
 
