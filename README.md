@@ -15,6 +15,9 @@ I did do a bit of manual cleanup as described in the Rmd.
 cleaning.Rmd takes NIPI-2015-2020_pre-cleaned.csv and outputs NIPI-CBC-2020-cleaned.csv
 
 # root
+~NIPI-CBC-2020-cleaned.csv is the data file used by the app.~
+
 NIPI-CBC-2020-cleaned.csv is the data file used by the app.
+
 
 app.R is the code for the Shiny app.
