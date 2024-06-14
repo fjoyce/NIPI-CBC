@@ -20,7 +20,7 @@ min_max <- function(vector){
 }
 
 # read in cleaned CBC data
-NIPI <- read_csv("NIPI-CBC-2021-cleaned.csv")
+NIPI <- read.csv("NIPI-CBC-2023-cleaned.csv")
 
 ## redo with species
 species_list <- NIPI %>%
@@ -38,7 +38,7 @@ year_min_max <- min_max(years_list)
 
 
 #navbarPage is a shiny page layout with a nav bar on top. Title for overall app.
-ui <- navbarPage("Conteo Navideño de Aves- Paso del Istmo 2015-2021",
+ui <- navbarPage("Conteo Navideño de Aves- Paso del Istmo 2015-2023",
                  
                  tabPanel(
                      
@@ -194,7 +194,7 @@ server <- function(input, output) {
                 theme(strip.text = element_text(face = "bold.italic")) + #make facet labels/titles italics             
                 #scale_colour_paletteer_c("tanagr::tangara_chilensis") +
                 #scale_color_manual(values = cal_palette("sierra1")) +
-                scale_x_continuous(breaks = seq(2015, 2020, by = 1)) +
+                scale_x_continuous(breaks = seq(2015, 2023, by = 1)) +
                 expand_limits(y=0) +
                 scale_y_continuous(labels = comma)#+
                 #scale_color_tanagr(palette_name = "tangara_chilensis")
