@@ -37,7 +37,7 @@ Then, delete non-species count top rows.
 ALso delete the rows below for participants...
 
 ```{r}
-NIPI_cbc <- read_csv(here("data/NIPI-2015-2021_pre-cleaned.csv"))
+NIPI_cbc <- read_csv(here("data/NIPI-2015-2023_pre-cleaned.csv"))
 
 ```
 
@@ -165,7 +165,7 @@ NIPI_cbc %>%
 Move this file manually to the root directory
 
 ```{r}
-write_csv(NIPI_cbc, "NIPI-CBC-2021-cleaned.csv")
+write_csv(NIPI_cbc, "NIPI-CBC-2023-cleaned.csv")
 ```
 
 
