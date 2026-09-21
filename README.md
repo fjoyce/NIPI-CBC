@@ -8,7 +8,9 @@ Migrated from shinyapps.io hosting to positcloud on 2026-09-21.
 
 Old URL: https://fhjoyce.shinyapps.io/NIPI-CBC. 
 
-New URL: https://connect.posit.cloud/fhjoyce/content/01a0c546-10e2-c620-362c-d659d0328cf3. 
+New URL: https://fhjoyce-nipi-cbc.share.connect.posit.cloud
+
+also works: https://connect.posit.cloud/fhjoyce/content/01a0c546-10e2-c620-362c-d659d0328cf3. 
 
 TODO- figure out new deployment workflow
 
